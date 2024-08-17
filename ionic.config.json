@@ -1,0 +1,7 @@
+{
+  "name": "healthFitness",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
