@@ -1,0 +1,16 @@
+ion-content{
+    --background: linear-gradient(0deg,rgba(0, 0, 0, 0.729), rgba(0, 0, 0, 0.636)),
+    url("/assets/icon/login.png") no-repeat center center /cover;
+
+}
+
+.logo{
+    width: 70%;
+    margin: 5% 0 5% 0;
+}
+
+.title{
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+}

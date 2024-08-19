@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  
+</ion-header>
+
+<ion-content class="ion-padding ion-text-center">
+  <div class="container">
+    <div class="gender-selection">
+      <div class="gender-option female" 
+           [class.selected]="selectedGender === 'female'" 
+           [class.unselected]="selectedGender === 'male'" 
+           (click)="toggleGender('female')">
+        <img src="assets/icon/female.jpg" alt="Female">
+      </div>
+      <div class="gender-option male" 
+           [class.selected]="selectedGender === 'male'" 
+           [class.unselected]="selectedGender === 'female'" 
+           (click)="toggleGender('male')">
+        <img src="assets/icon/male.jpeg" alt="Male">
+      </div>
+    </div>
+    <ion-button expand="block" [disabled]="!selectedGender" (click)="nextPage()">
+      Next
+    </ion-button>
+  </div>
+</ion-content>

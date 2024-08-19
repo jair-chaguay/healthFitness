@@ -1,0 +1,56 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra verticalmente */
+    align-items: center;     /* Centra horizontalmente */
+    height: 100vh;           /* Asegura que ocupe toda la altura de la vista */
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .gender-selection {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    width: 100%;             /* Asegura que los elementos se distribuyan a lo largo del ancho */
+    max-width: 500px;        /* Limita el ancho máximo para evitar que se extienda demasiado en pantallas grandes */
+  }
+  
+  .gender-option {
+    position: relative;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.1s ease;
+  
+    img {
+      border-radius: 50%;
+      transition: transform 0.3s ease, opacity 0.1s ease;
+    }
+  
+    ion-label {
+      display: block;
+      margin-top: 10px;
+      font-size: 16px;
+    }
+  
+    &.selected img {
+      transform: scale(1.2);
+      opacity: 1;
+    }
+  
+    &.unselected img {
+      transform: scale(0.8);
+      opacity: 0.5;
+    }
+  
+    &.female.selected img {
+      transform: scale(1.5) translateX(20%);
+    }
+  
+    &.male.selected img {
+      transform: scale(1.5) translateX(-20%);
+    }
+  }
+  
+  
+  
