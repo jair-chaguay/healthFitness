@@ -9,13 +9,13 @@
            [class.selected]="selectedGender === 'female'" 
            [class.unselected]="selectedGender === 'male'" 
            (click)="toggleGender('female')">
-        <img src="assets/icon/female.jpg" alt="Female">
+        <img class="imgfemale" src="assets/icon/correrfemale.png " alt="Female">
       </div>
       <div class="gender-option male" 
            [class.selected]="selectedGender === 'male'" 
            [class.unselected]="selectedGender === 'female'" 
            (click)="toggleGender('male')">
-        <img src="assets/icon/male.jpeg" alt="Male">
+        <img class="imgmale" src="assets/icon/corrermale.png" alt="Male">
       </div>
     </div>
     <ion-button expand="block" [disabled]="!selectedGender" (click)="nextPage()">

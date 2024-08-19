@@ -13,7 +13,7 @@
     justify-content: space-around;
     margin-bottom: 20px;
     width: 100%;             /* Asegura que los elementos se distribuyan a lo largo del ancho */
-    max-width: 500px;        /* Limita el ancho máximo para evitar que se extienda demasiado en pantallas grandes */
+    max-width: 200px;        /* Limita el ancho máximo para evitar que se extienda demasiado en pantallas grandes */
   }
   
   .gender-option {
@@ -23,8 +23,11 @@
     transition: transform 0.3s ease, opacity 0.1s ease;
   
     img {
-      border-radius: 50%;
       transition: transform 0.3s ease, opacity 0.1s ease;
+    }
+
+    img .imgfemale{
+      width: 100px;
     }
   
     ion-label {
