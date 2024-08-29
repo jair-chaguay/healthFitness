@@ -14,7 +14,7 @@ import { IonContent, IonHeader, IonButton, IonTitle, IonToolbar,IonItem, IonRang
 })
 export class OldWeiAltPage implements OnInit {
 
-  peso: number= 82;
+  peso: number= 80;
   altura: number= 185;
 edad: number = 40;
   constructor() { }
