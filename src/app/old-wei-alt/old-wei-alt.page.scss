@@ -1,11 +1,52 @@
-ion-range{
-    --bar-background: #a2d2ff;
-    --bar-background-active: #bde0fe;
-    --bar-height: 8px;
-    --bar-border-radius: 8px;
-    --knob-background: #ffc8dd;
-    --knob-size: 40px;
-    --pin-background: #ffafcc;
-    --pin-color: #fff;
+.page-container {
+    padding: 20px;
+    text-align: center;
+  }
   
-}
+  .header {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .subheader {
+    color: gray;
+    margin-bottom: 20px;
+  }
+  
+  .slider-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .value-display {
+    font-size: 36px;
+    font-weight: bold;
+    color: #0066FF;  /* Ajusta el color a azul */
+  }
+  
+  .unit-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .unit-buttons ion-segment {
+    --background: #f4f4f4;
+    --color-checked: #0066FF;  /* Ajusta el color a azul */
+  }
+  
+  .slider {
+    flex-grow: 1;
+    margin: 0 10px;
+  }
+  
+  button {
+    margin-top: 20px;
+    width: 100%;
+    background-color: #0066FF;  /* Ajusta el color del botón a azul */
+    color: white;
+  }
+  

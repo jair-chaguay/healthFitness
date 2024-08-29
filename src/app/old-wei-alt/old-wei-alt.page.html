@@ -1,13 +1,81 @@
-<ion-header [translucent]="true">
-
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title></ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="clear" class="omit-button">OMITIR</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-progress-bar value="0.5" color="primary"></ion-progress-bar>
 </ion-header>
 
 <ion-content class="ion-padding ion-text-center">
-  
-  <ion-range aria-label="Custom range" [value]="50" [pin]="true" >Edad</ion-range>
+  <div class="title-container">
+    <h1>Cuéntanos más sobre ti</h1>
+    <p>Déjenos conocerle mejor para potenciar los resultados de su entrenamiento</p>
+  </div>  
 
-  <ion-range aria-label="Custom range" [value]="50" [pin]="true">Edad</ion-range>
+  <div class="input-container">
+    <ion-item lines="none" class="custom-item">
+      <ion-label class="item-label">Edad</ion-label>     
+      <h1 class="input-value">{{edad}}<span> años</span></h1>
+    </ion-item>
+    
 
-  <ion-range aria-label="Custom range" [value]="50" [pin]="true">Edad</ion-range>
+    <ion-range min="0" max="80" step="0.1" [(ngModel)]="edad" color="primary" class="custom-range">
+      <ion-label slot="start">0</ion-label>
+      <ion-label slot="end">80</ion-label>
+    </ion-range>
+  </div>
+
+
+  <div class="input-container">
+    <ion-item lines="none" class="custom-item">
+      <ion-label class="item-label">Peso</ion-label>
+      <ion-segment value="kg" class="unit-segment">
+        <ion-segment-button value="kg" class="segment-button">
+          <ion-label>kg</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="lbs" class="segment-button">
+          <ion-label>lbs</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+
+      
+    </ion-item>
+    <h1 class="input-value">{{peso}}<span> kg</span></h1>
+
+    <ion-range min="40" max="120" step="0.1" [(ngModel)]="peso" color="primary" class="custom-range">
+      <ion-label slot="start">40</ion-label>
+      <ion-label slot="end">120</ion-label>
+    </ion-range>
+  </div>
+
+  <div class="input-container">
+    <ion-item lines="none" class="custom-item">
+      <ion-label class="item-label">Altura</ion-label>
+      <ion-segment value="cm" class="unit-segment">
+        <ion-segment-button value="cm" class="segment-button">
+          <ion-label>cm</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="m" class="segment-button">
+          <ion-label>m</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+      
+    </ion-item>
+    <h1 class="input-value">{{altura}}<span> cm</span></h1>
+
+    <ion-range min="150" max="220" step="1" [(ngModel)]="altura" color="primary" class="custom-range">
+      <ion-label slot="start">150</ion-label>
+      <ion-label slot="end">120</ion-label>
+    </ion-range>
+  </div>
+
+  <ion-button expand="block">
+    SIGUIENTE
+  </ion-button>
 
 </ion-content>
