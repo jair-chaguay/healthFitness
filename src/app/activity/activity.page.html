@@ -1,55 +1,54 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Objetivos</ion-title>
+    <ion-title>¿Cuál es tu nivel de actividad?</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
-
-  <div class="progress-bar">
-    <ion-progress-bar value="0.25"></ion-progress-bar>
-  </div>
-
   
-  <div class="container">
-    <h2>Comencemos con tus objetivos</h2>
-    <p>Selecciona uno que sea importante para ti.</p>
-
-    <div class="options">
-      <ion-card
-        [ngClass]="{'selected': selectedGoal === 'lose-weight'}"
-        (click)="selectGoal('lose-weight')"
-      >
-        <ion-card-content>
-          Perder peso
-        </ion-card-content>
-      </ion-card>
-
-      <ion-card
-        [ngClass]="{'selected': selectedGoal === 'maintain-weight'}"
-        (click)="selectGoal('maintain-weight')"
-      >
-        <ion-card-content>
-          Mantener peso
-        </ion-card-content>
-      </ion-card>
-
-      <ion-card
-        [ngClass]="{'selected': selectedGoal === 'gain-weight'}"
-        (click)="selectGoal('gain-weight')"
-      >
-        <ion-card-content>
-          Ganar peso
-        </ion-card-content>
-      </ion-card>
-    </div>
-
-    <ion-button
-      expand="block"
-      [disabled]="!selectedGoal"
-      (click)="nextPage()"
-    >
-      Siguiente
-    </ion-button>
+  <div class="progress-bar">
+    <ion-progress-bar value="0.35"></ion-progress-bar>
   </div>
+  <div>
+    <h3>Seleccione su nivel de actividad</h3>
+  </div>
+  <ion-list>
+    <ion-radio-group [(ngModel)]="selectedActivity">
+      <ion-item [ngClass]="{'selected': selectedActivity === 'sedentario'}">
+        <ion-label>
+          <img src="assets/icon/sedentario.png" class="icon-image" alt="Sedentario">
+          Sedentario
+        </ion-label>
+        <ion-radio slot="start" value="sedentario"></ion-radio>
+      </ion-item>
+
+      <ion-item [ngClass]="{'selected': selectedActivity === 'actividad-ligera'}">
+        <ion-label>
+          <img src="assets/icon/actividadLigera.png" class="icon-image" alt="Actividad ligera">
+          Actividad ligera
+        </ion-label>
+        <ion-radio slot="start" value="actividad-ligera"></ion-radio>
+      </ion-item>
+
+      <ion-item [ngClass]="{'selected': selectedActivity === 'moderadamente-activa'}">
+        <ion-label>
+          <img src="assets/icon/moderadamenteActiva.png" class="icon-image" alt="Moderadamente activa">
+          Moderadamente activa
+        </ion-label>
+        <ion-radio slot="start" value="moderadamente-activa"></ion-radio>
+      </ion-item>
+
+      <ion-item [ngClass]="{'selected': selectedActivity === 'muy-activa'}">
+        <ion-label>
+          <img src="assets/icon/muyActiva.png" class="icon-image" alt="Muy activa">
+          Muy activa
+        </ion-label>
+        <ion-radio slot="start" value="muy-activa"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </ion-list>
+
+  <ion-button expand="full" color="primary" (click)="onNext()">
+    Siguiente
+  </ion-button>
 </ion-content>

@@ -1,0 +1,86 @@
+ion-item {
+    margin-bottom: 20px;
+  }
+  
+  .peso-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .peso-meta ion-label {
+    flex: 2;
+  }
+  
+  .peso-meta ion-input {
+    flex: 1;
+    margin-right: 10px;
+  }
+  
+  .peso-meta ion-select {
+    flex: 1;
+  }
+  
+  .objetivo-semanal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .objetivo-semanal ion-label {
+    flex: 5;
+  }
+  
+  .objetivo-semanal ion-select {
+    flex: 2;
+  }
+  
+  ion-button {
+    margin-top: 20px;
+    --color: #fff; /* Color del texto del botón */
+  }
+  
+  ion-item {
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+  }
+  
+  ion-select {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  .peso-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .peso-meta ion-label {
+    flex: 2;
+  }
+  
+  .peso-meta ion-input {
+    flex: 1;
+    margin-right: 10px;
+  }
+  
+  .peso-meta ion-select {
+    flex: 1;
+  }
+  
+  .objetivo-semanal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .objetivo-semanal ion-label {
+    flex: 5;
+  }
+  
+  .objetivo-semanal ion-select {
+    flex: 2;
+  }
+  

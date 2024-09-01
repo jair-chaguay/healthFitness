@@ -1,25 +1,99 @@
-<ion-header [translucent]="true">
-  
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Datos Necesarios</ion-title>
+    <ion-buttons slot="end">
+   
+    </ion-buttons>
+  </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding ion-text-center">
-  <div class="container">
-    <div class="gender-selection">
-      <div class="gender-option female" 
-           [class.selected]="selectedGender === 'female'" 
-           [class.unselected]="selectedGender === 'male'" 
-           (click)="toggleGender('female')">
-        <img class="imgfemale" src="assets/icon/correrfemale.png " alt="Female">
-      </div>
-      <div class="gender-option male" 
-           [class.selected]="selectedGender === 'male'" 
-           [class.unselected]="selectedGender === 'female'" 
-           (click)="toggleGender('male')">
-        <img class="imgmale" src="assets/icon/corrermale.png" alt="Male">
-      </div>
-    </div>
-    <ion-button expand="block" [disabled]="!selectedGender" (click)="nextPage()">
-      Next
-    </ion-button>
+<ion-content class="ion-padding">
+  <div class="progress-bar">
+    <ion-progress-bar value="0.65"></ion-progress-bar>
   </div>
+
+  
+
+  <form (ngSubmit)="onSubmit()">
+    <ion-radio-group [(ngModel)]="selectedGender">
+      <ion-card [ngClass]="{'selected': selectedGender === 'masculino'}" class="gender-card">
+        <div class="card-content">
+          <ion-item lines="none">
+            <ion-radio slot="start" value="masculino"></ion-radio>
+            <ion-label>
+              <div class="icon-label">
+                <p>Masculino</p>
+              </div>
+            </ion-label>
+          </ion-item>
+          <img src="assets/icon/male.jpg" class="gender-image" alt="Male">
+        </div>
+      </ion-card>
+    
+      <ion-card [ngClass]="{'selected': selectedGender === 'femenino'}" class="gender-card">
+        <div class="card-content">
+          <ion-item lines="none">
+            <ion-radio slot="start" value="femenino"></ion-radio>
+            <ion-label>
+              <div class="icon-label">
+                <p>Femenino</p>
+              </div>
+            </ion-label>
+          </ion-item>
+          <img src="assets/icon/female.jpg" class="gender-image" alt="Female">
+        </div>
+      </ion-card>
+    </ion-radio-group>
+    <ion-item class="datos">
+      <ion-label>Edad</ion-label>
+      <ion-input [(ngModel)]="edad" name="edad" type="number"></ion-input>
+    </ion-item>
+
+    <ion-item class="datos">
+      <ion-label>Altura (m o cm)</ion-label>
+      <ion-input [(ngModel)]="altura" name="altura" type="number" (ionChange)="convertirAltura()"></ion-input>
+      <ion-select [(ngModel)]="unidadAltura" name="unidadAltura" (ionChange)="convertirAltura()">
+        <ion-select-option value="m">Metros (m)</ion-select-option>
+        <ion-select-option value="cm">Centímetros (cm)</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item class="datos">
+      <ion-label>Peso (kg o lbs)</ion-label>
+      <ion-input [(ngModel)]="peso" name="peso" type="number" (ionChange)="convertirPeso()"></ion-input>
+      <ion-select [(ngModel)]="unidadPeso" name="unidadPeso" (ionChange)="convertirPeso()">
+        <ion-select-option value="kg">Kilogramos (kg)</ion-select-option>
+        <ion-select-option value="lbs">Libras (lbs)</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item class="datos">
+
+    
+  </ion-item>
+
+  <ion-item class="peso-meta">
+    <ion-label>Peso al que quieres llegar</ion-label>
+    <ion-input [(ngModel)]="pesoMeta" name="pesoMeta" type="number" placeholder="Ingresa tu peso meta" (ionChange)="convertirPesoMeta()"></ion-input>
+    <ion-select [(ngModel)]="unidadPesoMeta" name="unidadPesoMeta" (ionChange)="convertirPesoMeta()">
+      <ion-select-option value="kg"> (kg)</ion-select-option>
+      <ion-select-option value="lbs"> (lbs)</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <!-- Objetivo Semanal -->
+  <ion-item class="objetivo-semanal">
+    <ion-label>Objetivo Semanal</ion-label>
+    <ion-select [(ngModel)]="objetivoSemanal" name="objetivoSemanal">
+      <ion-select-option value="0.25">Perder 0.25 kg por semana</ion-select-option>
+      <ion-select-option value="0.5">Perder 0.5 kg por semana</ion-select-option>
+      <ion-select-option value="0.75">Perder 0.75 kg por semana</ion-select-option>
+      <ion-select-option value="1">Perder 1 kg por semana</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+
+    <ion-button expand="full" type="submit">Continue</ion-button>
+  </form>
+
 </ion-content>

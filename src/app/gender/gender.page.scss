@@ -1,59 +1,124 @@
-.container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Centra verticalmente */
-    align-items: center;     /* Centra horizontalmente */
-    height: 100vh;           /* Asegura que ocupe toda la altura de la vista */
-    padding: 20px;
-    text-align: center;
-  }
-  
-  .gender-selection {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 20px;
-    width: 100%;             /* Asegura que los elementos se distribuyan a lo largo del ancho */
-    max-width: 200px;        /* Limita el ancho máximo para evitar que se extienda demasiado en pantallas grandes */
-  }
-  
-  .gender-option {
-    position: relative;
-    text-align: center;
-    cursor: pointer;
-    transition: transform 0.3s ease, opacity 0.1s ease;
-  
-    img {
-      transition: transform 0.3s ease, opacity 0.1s ease;
-    }
+.gender-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  background-color: #fff; /* Fondo blanco para todo el contenedor */
+  overflow: hidden;
+  transition: border-color 0.3s ease;
+}
 
-    img .imgfemale{
-      width: 100px;
-    }
-  
-    ion-label {
-      display: block;
-      margin-top: 10px;
-      font-size: 16px;
-    }
-  
-    &.selected img {
-      transform: scale(1.2);
-      opacity: 1;
-    }
-  
-    &.unselected img {
-      transform: scale(0.8);
-      opacity: 0.5;
-    }
-  
-    &.female.selected img {
-      transform: scale(1.5) translateX(20%);
-    }
-  
-    &.male.selected img {
-      transform: scale(1.5) translateX(-20%);
-    }
-  }
-  
-  
-  
+.peso-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.peso-meta ion-label {
+  flex: 2;
+}
+
+.peso-meta ion-input {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.peso-meta ion-select {
+  flex: 1;
+}
+
+.objetivo-semanal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.objetivo-semanal ion-label {
+  flex: 5;
+}
+
+.objetivo-semanal ion-select {
+  flex: 2;
+}
+
+.card-content {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff; /* Fondo blanco para el texto también */
+}
+
+.gender-image {
+  width: 50%; /* La imagen ocupa la mitad del contenedor */
+  height: 100%;
+  object-fit: cover;
+}
+
+ion-item {
+  width: 50%; /* El texto ocupa la otra mitad del contenedor */
+  padding: 16px;
+  background-color: #fff; /* Fondo blanco para la sección de texto */
+  --background: none !important; /* Sobrescribe cualquier fondo en el ion-item */
+}
+
+ .datos{
+  width: 100%;
+}
+
+ion-item::after {
+  background-color: transparent !important; /* Elimina cualquier pseudo-elemento que agregue un fondo */
+}
+
+.icon-label {
+  display: flex;
+  align-items: center;
+  color: #000; /* Asegura que el texto sea negro para buena legibilidad */
+}
+
+.icon-label ion-icon {
+  margin-right: 8px;
+  color: #000; /* Asegura que el ícono sea negro también */
+}
+
+.selected {
+  border: 2px solid #ff8c00; /* Color del borde para la opción seleccionada */
+}
+
+ion-button {
+  margin-top: 15px;
+}
+
+ion-button[color="warning"] {
+  --background: #ffe7cc;
+  --color: #ff8c00;
+}
+
+ion-button[color="dark"] {
+  --background: #000;
+  --color: #fff;
+}
+
+ion-button[color="dark"] ion-icon {
+  margin-left: 5px;
+}
+
+
+ion-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Asegura que el botón quede en la parte inferior */
+}
+
+form {
+  flex: 1;
+}
+
+ion-button {
+  margin-top: 15px;
+  margin-bottom: 20px; /* Asegura que el botón no esté pegado al borde de la pantalla */
+}

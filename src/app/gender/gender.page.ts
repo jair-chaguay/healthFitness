@@ -1,45 +1,64 @@
-  import { Component, OnInit } from '@angular/core';
-  import { CommonModule } from '@angular/common';
-  import { FormsModule } from '@angular/forms';
-  import { IonContent, IonHeader, IonTitle, IonToolbar, IonButtons, IonBackButton, IonLabel, IonButton} from '@ionic/angular/standalone';
-  import {ModalController, NavController} from '@ionic/angular'
+import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import {
+  IonContent, IonHeader, IonTitle, IonToolbar, IonButtons, IonBackButton, IonLabel, IonButton, IonItem, IonIcon, IonRadio,
+  IonProgressBar, IonSelectOption
+} from '@ionic/angular/standalone';
+import { NavController } from '@ionic/angular'
 
 
-  @Component({
-    selector: 'app-gender',
-    templateUrl: './gender.page.html',
-    styleUrls: ['./gender.page.scss'],
-    standalone: true,
-    imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonButtons, IonBackButton, IonLabel, IonButton]
-  })
-  export class GenderPage implements OnInit {
-    selectedGender: string | null = null;
+@Component({
+  selector: 'app-gender',
+  templateUrl: './gender.page.html',
+  styleUrls: ['./gender.page.scss'],
+  standalone: true,
+  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonButtons, IonBackButton, IonLabel, IonButton,
+    IonItem, IonIcon, IonRadio, IonProgressBar, IonSelectOption
+  ]
+})
+export class GenderPage implements OnInit {
+  selectedGender: string = '';
+  edad: number = 0.0;
+  altura: number = 0.0;
+  peso: number = 0.0;
+  unidadAltura: string = 'm';
+  unidadPeso: string = 'kg';
+  pesoMeta: number = 0;
+  objetivoSemanal: string = '';
+  unidadPesoMeta: string = 'kg'; // Valor por defecto
 
-  constructor(
-    public modalCtrl: ModalController,
-    private navCtrl: NavController  // Inyecta NavController
-
+  constructor(private navCtrl: NavController
   ) { }
 
-  ngOnInit() {}
 
-  async dismiss() {
-    await this.modalCtrl.dismiss();
-  }
 
-  toggleGender(gender: string) {
-    if (this.selectedGender === gender) {
-      // Si el género ya está seleccionado, lo deseleccionamos
-      this.selectedGender = null;
-    } else {
-      // Si no, seleccionamos el género
-      this.selectedGender = gender;
+  convertirAltura() {
+    if (this.unidadAltura === 'cm') {
+      this.altura = this.altura / 100; // Convertir cm a metros
     }
   }
 
-  async nextPage() {
-    
-    this.navCtrl.navigateRoot('/old-wei-alt', { animated: true, animationDirection: 'forward' });
-
+  
+  convertirPesoMeta() {
+    if (this.unidadPesoMeta === 'lbs') {
+      this.pesoMeta = this.pesoMeta * 0.453592; // Convertir libras a kilogramos
+    }
   }
+
+  convertirPeso() {
+    if (this.unidadPeso === 'lbs') {
+      this.peso = this.peso * 0.453592; // Convertir libras a kilogramos
+    }
+  }
+
+  ngOnInit() { }
+
+  onSubmit() {
+    // Procesar los datos aquí
+    console.log(`Edad: ${this.edad}`);
+    console.log(`Altura: ${this.altura} m`);
+    console.log(`Peso: ${this.peso} kg`);
+  }
+
 }

@@ -1,12 +1,12 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { OldWeiAltPage } from './old-wei-alt.page';
+import { ObjWeekendPage } from './obj-weekend.page';
 
-describe('OldWeiAltPage', () => {
-  let component: OldWeiAltPage;
-  let fixture: ComponentFixture<OldWeiAltPage>;
+describe('ObjWeekendPage', () => {
+  let component: ObjWeekendPage;
+  let fixture: ComponentFixture<ObjWeekendPage>;
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(OldWeiAltPage);
+    fixture = TestBed.createComponent(ObjWeekendPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

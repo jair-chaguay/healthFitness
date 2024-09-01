@@ -1,49 +1,31 @@
-.container {
-    align-items: center;
-    text-align: center;
-  }
-  
-  h2 {
-    margin-bottom: 10px;
-    font-size: 24px;
-    font-weight: 600;
-  }
-  
-  p {
-    margin-bottom: 20px;
-    color: #666;
-  }
-  
-  .options {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
+ion-item.selected {
+  border: 2px solid #c1272c6c; /* Color del borde cuando la opción está seleccionada */
+  border-radius: 8px;
+}
 
-    margin-bottom: 30px;
-  }
-  
-  ion-card {
-    border: 2px solid transparent;
-    border-radius: 10px;
-    transition: border-color 0.3s;
-    
-  }
-  
-  ion-card:hover {
-    cursor: pointer;
-    border-color: #ccc;
-  }
-  
-  ion-card.selected {
-    border-color: #3880ff; /* Color principal de Ionic */
-  }
-  
-  ion-card-content {
-    font-size: 18px;
-    font-weight: 500;
-  }
-  
-  ion-button {
-    width: 100%;
-  }
-  
+ion-icon {
+  margin-right: 8px;
+}
+.icon-image {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+ion-item {
+  margin-bottom: 20px; /* Aumentar el espacio entre los elementos */
+  --background: #f9f9f9; /* Color de fondo predeterminado de las opciones */
+  padding: 12px; /* Añadir padding para mayor separación interna */
+  border-radius: 8px; /* Bordes redondeados */
+}
+
+ion-item.selected ion-label {
+  font-weight: bold; /* Negrita para la opción seleccionada */
+}
+
+ion-button {
+  margin-top: 20px;
+}
+
+

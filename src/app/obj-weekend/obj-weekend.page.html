@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Objetivo Semanal</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form (ngSubmit)="onSubmit()">
+    <!-- Peso al que quieres llegar -->
+    <ion-item class="peso-meta">
+      <ion-label>Peso al que quieres llegar</ion-label>
+      <ion-input [(ngModel)]="pesoMeta" name="pesoMeta" type="number" placeholder="Ingresa tu peso meta" (ionChange)="convertirPesoMeta()"></ion-input>
+      <ion-select [(ngModel)]="unidadPesoMeta" name="unidadPesoMeta" (ionChange)="convertirPesoMeta()">
+        <ion-select-option value="kg"> (kg)</ion-select-option>
+        <ion-select-option value="lbs"> (lbs)</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <!-- Objetivo Semanal -->
+    <ion-item class="objetivo-semanal">
+      <ion-label>Objetivo Semanal</ion-label>
+      <ion-select [(ngModel)]="objetivoSemanal" name="objetivoSemanal">
+        <ion-select-option value="0.25">Perder 0.25 kg por semana</ion-select-option>
+        <ion-select-option value="0.5">Perder 0.5 kg por semana</ion-select-option>
+        <ion-select-option value="0.75">Perder 0.75 kg por semana</ion-select-option>
+        <ion-select-option value="1">Perder 1 kg por semana</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-button expand="full" type="submit">Guardar Objetivos</ion-button>
+  </form>
+</ion-content>

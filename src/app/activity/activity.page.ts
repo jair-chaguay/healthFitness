@@ -19,19 +19,12 @@ import { Router } from '@angular/router';
 
 export class ActivityPage implements OnInit {
 
-  selectedGoal: string | null = null;
+  selectedActivity: string= '';
 
   constructor(private router: Router) {}
 
-  selectGoal(goal: string) {
-    this.selectedGoal = goal;
-  }
+  onNext() {
 
-  nextPage() {
-    if (this.selectedGoal) {
-      console.log('Objetivo seleccionado:', this.selectedGoal);
-      this.router.navigate([]); 
-    }
   }
 
   ngOnInit() {

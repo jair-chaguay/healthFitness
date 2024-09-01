@@ -26,10 +26,6 @@ export const routes: Routes = [
     loadComponent: () => import('./gender/gender.page').then( m => m.GenderPage)
   },
   {
-    path: 'old-wei-alt',
-    loadComponent: () => import('./old-wei-alt/old-wei-alt.page').then( m => m.OldWeiAltPage)
-  },
-  {
     path: 'goals',
     loadComponent: () => import('./goals/goals.page').then( m => m.GoalsPage)
   },
@@ -37,6 +33,11 @@ export const routes: Routes = [
     path: 'activity',
     loadComponent: () => import('./activity/activity.page').then( m => m.ActivityPage)
   },
+  {
+    path: 'obj-weekend',
+    loadComponent: () => import('./obj-weekend/obj-weekend.page').then( m => m.ObjWeekendPage)
+  },
+
 
   
 ];
