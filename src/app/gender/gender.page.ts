@@ -59,6 +59,8 @@ export class GenderPage implements OnInit {
     console.log(`Edad: ${this.edad}`);
     console.log(`Altura: ${this.altura} m`);
     console.log(`Peso: ${this.peso} kg`);
+    this.navCtrl.navigateForward('/activity', { animated: true, animationDirection: 'forward' }); // Cambia '/goals' por la ruta correcta de tu página Goals
+
   }
 
 }

@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { IonContent, IonHeader, IonTitle, IonToolbar, IonCard,IonCardContent, IonProgressBar,
   IonList, IonRadioGroup, IonItem, IonLabel, IonRadio, IonButton, IonIcon
 }from '@ionic/angular/standalone';
+import { NavController } from '@ionic/angular'; 
 
 @Component({
   selector: 'app-goals',
@@ -17,7 +18,7 @@ import { IonContent, IonHeader, IonTitle, IonToolbar, IonCard,IonCardContent, Io
 export class GoalsPage implements OnInit {
   selectedGoal: string | null = null;
 
-  constructor(private router: Router) {}
+  constructor(private navCtrl: NavController) {}
 
   selectGoal(goal: string) {
     this.selectedGoal = goal;
@@ -26,7 +27,7 @@ export class GoalsPage implements OnInit {
   nextPage() {
     if (this.selectedGoal) {
       console.log('Objetivo seleccionado:', this.selectedGoal);
-      this.router.navigate([]); 
+      this.navCtrl.navigateForward('/gender', { animated: true, animationDirection: 'forward' }); // Cambia '/goals' por la ruta correcta de tu página Goals
     }
   }
 

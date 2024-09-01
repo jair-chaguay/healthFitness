@@ -36,7 +36,11 @@ export const routes: Routes = [
   {
     path: 'obj-weekend',
     loadComponent: () => import('./obj-weekend/obj-weekend.page').then( m => m.ObjWeekendPage)
+  },  {
+    path: 'finish-sign',
+    loadComponent: () => import('./finish-sign/finish-sign.page').then( m => m.FinishSignPage)
   },
+
 
 
   

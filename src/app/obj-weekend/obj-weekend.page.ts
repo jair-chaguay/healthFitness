@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { IonContent, IonHeader, IonTitle, IonToolbar, IonItem, IonLabel, IonInput, IonSelect, IonSelectOption, IonButton
 
  } from '@ionic/angular/standalone';
+ import { NavController } from '@ionic/angular'
 
 @Component({
   selector: 'app-obj-weekend',
@@ -18,7 +19,7 @@ export class ObjWeekendPage implements OnInit {
 objetivoSemanal: string = '';
   unidadPesoMeta: string = 'kg'; // Valor por defecto
   
-  constructor() { }
+  constructor(private navController: NavController) { }
 
   ngOnInit() {
   }
@@ -38,5 +39,7 @@ objetivoSemanal: string = '';
     console.log(`Peso Meta: ${this.pesoMeta} kg`);
     console.log(`Objetivo Semanal: ${this.objetivoSemanal} kg por semana`);
     // Aquí podrías guardar estos datos o usarlos según sea necesario
+
+    this.navController.navigateForward('/finish-sign')
   }
 } 

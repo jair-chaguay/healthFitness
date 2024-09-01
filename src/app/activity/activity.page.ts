@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { IonContent, IonHeader, IonTitle, IonToolbar, IonCard,IonCardContent, IonProgressBar,
   IonList, IonRadioGroup, IonItem, IonLabel, IonRadio, IonButton, IonIcon
 }from '@ionic/angular/standalone';
-import { Router } from '@angular/router';
+import { NavController } from '@ionic/angular'
 
 
 @Component({
@@ -21,9 +21,10 @@ export class ActivityPage implements OnInit {
 
   selectedActivity: string= '';
 
-  constructor(private router: Router) {}
+  constructor(private navCtrl: NavController ) {}
 
   onNext() {
+    this.navCtrl.navigateForward('/obj-weekend', { animated: true, animationDirection: 'forward' }); // Cambia '/goals' por la ruta correcta de tu página Goals
 
   }
 
