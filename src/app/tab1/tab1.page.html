@@ -8,7 +8,7 @@
 
 <ion-content [fullscreen]="true">
   <!-- Mensaje de bienvenida -->
-  <ion-card class="welcome-card">
+  <ion-card class="welcome-card" >
     <ion-card-header>
       <ion-card-title>Bienvenido a tu aplicación de salud</ion-card-title>
     </ion-card-header>
@@ -27,27 +27,51 @@
       </div>
     </ion-card-header>
     <ion-card-content class="center-content">
+      <img src="assets/images/fire.png" alt="Calorías" class="card-image">
       <p>Para mantener tu peso actual, necesitas consumir 2,000 calorías diarias.</p>
     </ion-card-content>
   </ion-card>
 
-  <!-- Gráfico o estadísticas -->
   <ion-card>
     <ion-card-header>
-      <ion-card-title>Progreso Semanal</ion-card-title>
+      <ion-card-title>Resumen de Métricas Semanales</ion-card-title>
     </ion-card-header>
-    <ion-card-content>
-      <!-- Aquí podrías incluir un gráfico utilizando una librería como Chart.js o similar -->
+    <ion-card-content class="metrics-content">
+      <!-- Contenedor flex para alinear horizontalmente las métricas y sus imágenes -->
+      <div class="metrics-container">
+        <div class="metric-item">
+          <img src="assets/images/fireb.png" alt="Calorías" class="metric-icon">
+          <p>Calorías Consumidas </p>
+          <p>15,000</p>
+        </div>
+        <div class="metric-item">
+          <img src="assets/images/walk.png" alt="Pasos" class="metric-icon">
+          <p>Pasos Dados</p>
+          <p>70,000</p>
+        </div>
+        <div class="metric-item">
+          <img src="assets/images/person.png" alt="Minutos" class="metric-icon">
+          <p>Minutos de Ejercicio</p>
+          <p>300</p>
+        </div>
+      </div>
     </ion-card-content>
   </ion-card>
+  
 
   <!-- Recordatorios -->
   <ion-card>
     <ion-card-header>
       <ion-card-title>Recordatorios</ion-card-title>
     </ion-card-header>
-    <ion-card-content>
+    <ion-card-content class="reminders-content">
       <p>Recuerda beber suficiente agua y hacer ejercicio diariamente.</p>
+      <!-- Contenedor flex para alinear horizontalmente las imágenes -->
+      <div class="reminders-images">
+        <img src="assets/images/drink-water.png" alt="Agua" class="reminder-icon">
+        <img src="assets/images/weightlifting.png" alt="Ejercicio" class="reminder-icon">
+      </div>
     </ion-card-content>
   </ion-card>
+  
 </ion-content>
