@@ -1,23 +1,48 @@
-.goals-container {
-    text-align: center;
-  }
-  
-  .button-group {
-    margin-top: 20px;
-  }
-  
-  ion-button {
-    margin-bottom: 10px;
-  }
-  
-  ion-button.selected {
-    background-color: var(--ion-color-primary);
-    color: white;
-    transition:  0.4s ease; 
+.container {
+  align-items: center;
+  text-align: center;
+}
 
-  }
+h2 {
+  margin-bottom: 10px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+p {
+  margin-bottom: 20px;
+  color: #666;
+}
+
+.options {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: 30px;
+}
+
+ion-card {
+  border: 2px solid transparent;
+  border-radius: 10px;
+  transition: border-color 0.3s;
   
-  ion-footer {
-    --background: transparent;
-  }
-  
+}
+
+ion-card:hover {
+  cursor: pointer;
+  border-color: #ccc;
+}
+
+ion-card.selected {
+  border-color: #3880ff; /* Color principal de Ionic */
+}
+
+ion-card-content {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+ion-button {
+  width: 100%;
+}

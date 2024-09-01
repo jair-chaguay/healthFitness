@@ -1,47 +1,55 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Goals</ion-title>
+    <ion-title>Objetivos</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
-  <div class="goals-container">
-    <h2>Let's start with goals.</h2>
-    <p>Select up to 3 that are important to you, including one weight goal.</p>
 
-    <div class="button-group">
-      <ion-button
-        expand="block"
-        fill="outline"
-        [class.selected]="selectedGoal === 'lose'"
-        (click)="selectGoal('lose')"
-      >
-        Lose weight
-      </ion-button>
+  <div class="progress-bar">
+    <ion-progress-bar value="0.25"></ion-progress-bar>
+  </div>
 
-      <ion-button
-        expand="block"
-        fill="outline"
-        [class.selected]="selectedGoal === 'maintain'"
-        (click)="selectGoal('maintain')"
-      >
-        Maintain weight
-      </ion-button>
+  
+  <div class="container">
+    <h2>Comencemos con tus objetivos</h2>
+    <p>Selecciona uno que sea importante para ti.</p>
 
-      <ion-button
-        expand="block"
-        fill="outline"
-        [class.selected]="selectedGoal === 'gain'"
-        (click)="selectGoal('gain')"
+    <div class="options">
+      <ion-card
+        [ngClass]="{'selected': selectedGoal === 'lose-weight'}"
+        (click)="selectGoal('lose-weight')"
       >
-        Gain weight
-      </ion-button>
+        <ion-card-content>
+          Perder peso
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card
+        [ngClass]="{'selected': selectedGoal === 'maintain-weight'}"
+        (click)="selectGoal('maintain-weight')"
+      >
+        <ion-card-content>
+          Mantener peso
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card
+        [ngClass]="{'selected': selectedGoal === 'gain-weight'}"
+        (click)="selectGoal('gain-weight')"
+      >
+        <ion-card-content>
+          Ganar peso
+        </ion-card-content>
+      </ion-card>
     </div>
+
+    <ion-button
+      expand="block"
+      [disabled]="!selectedGoal"
+      (click)="nextPage()"
+    >
+      Siguiente
+    </ion-button>
   </div>
 </ion-content>
-
-<ion-footer>
-  <ion-toolbar>
-    <ion-button expand="full" (click)="goToNextPage()">Next</ion-button>
-  </ion-toolbar>
-</ion-footer>

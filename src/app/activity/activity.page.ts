@@ -1,41 +1,43 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { IonContent, IonHeader, IonTitle, IonToolbar, IonCard,IonCardContent, IonProgressBar,
+  IonList, IonRadioGroup, IonItem, IonLabel, IonRadio, IonButton, IonIcon
+}from '@ionic/angular/standalone';
 import { Router } from '@angular/router';
-import { IonContent,IonFooter, IonHeader, IonTitle, IonToolbar, IonCard, IonCardHeader,IonCardTitle, IonCardSubtitle, IonList, IonItem,
-  IonLabel, IonRadio, IonButton, IonButtons, IonBackButton}from '@ionic/angular/standalone';
+
 
 @Component({
   selector: 'app-activity',
   templateUrl: './activity.page.html',
   styleUrls: ['./activity.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonCard, IonCardHeader,IonCardTitle, 
-    IonCardSubtitle,IonFooter, IonList, IonItem, IonLabel, IonRadio, IonButton, IonButtons, IonBackButton]
+  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonCard,IonProgressBar,
+    IonList, IonRadioGroup, IonItem, IonLabel, IonRadio, IonButton, IonCardContent,IonIcon]
 })
 
 
 export class ActivityPage implements OnInit {
-  selectedActivity: string = '';
-  constructor(private router: Router) { }
+
+  selectedGoal: string | null = null;
+
+  constructor(private router: Router) {}
+
+  selectGoal(goal: string) {
+    this.selectedGoal = goal;
+  }
+
+  nextPage() {
+    if (this.selectedGoal) {
+      console.log('Objetivo seleccionado:', this.selectedGoal);
+      this.router.navigate([]); 
+    }
+  }
 
   ngOnInit() {
   }
 
-  selectActivity(activity: string) {
-    this.selectedActivity = activity;
-  }
-  
-
-  goToNextPage() {
-    if (this.selectedActivity) {
-      // Navegar a la siguiente página o realizar alguna acción
-      console.log('Goal seleccionado:', this.selectedActivity);
-      this.router.navigate(['']); 
-    } else {
-      alert('Please select a goal.');
-    }
-  }
+ 
 
 }
 

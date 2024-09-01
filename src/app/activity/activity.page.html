@@ -1,67 +1,55 @@
 <ion-header>
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-    </ion-buttons>
-    <ion-title>Activity Level</ion-title>
+    <ion-title>Objetivos</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
-  <div class="activity-container">
-    <h2>What is your baseline activity level?</h2>
-    <p>Not including workouts - we count that separately.</p>
 
-    <div class="button-group">
-      <ion-button
-        expand="block"
-        fill="outline"
-        [class.selected]="selectedActivity === 'not-very-active'"
-        (click)="selectActivity('not-very-active')"
-        class="activity-button"
-      >
-        Not Very Active
-        <p>Spend most of the day sitting (e.g., bank teller, desk job).</p>
-      </ion-button>
+  <div class="progress-bar">
+    <ion-progress-bar value="0.25"></ion-progress-bar>
+  </div>
 
-      <ion-button
-        expand="block"
-        fill="outline"
-        [class.selected]="selectedActivity === 'lightly-active'"
-        (click)="selectActivity('lightly-active')"
-        class="activity-button"
-      >
-        Lightly Active
-        <p>Spend a good part of the day on your feet (e.g., teacher, salesperson).</p>
-      </ion-button>
+  
+  <div class="container">
+    <h2>Comencemos con tus objetivos</h2>
+    <p>Selecciona uno que sea importante para ti.</p>
 
-      <ion-button
-        expand="block"
-        fill="outline"
-        [class.selected]="selectedActivity === 'active'"
-        (click)="selectActivity('active')"
-        class="activity-button"
+    <div class="options">
+      <ion-card
+        [ngClass]="{'selected': selectedGoal === 'lose-weight'}"
+        (click)="selectGoal('lose-weight')"
       >
-        Active
-        <p>Spend a good part of the day doing some physical activity (e.g., food server, postal carrier).</p>
-      </ion-button>
+        <ion-card-content>
+          Perder peso
+        </ion-card-content>
+      </ion-card>
 
-      <ion-button
-        expand="block"
-        fill="outline"
-        [class.selected]="selectedActivity === 'very-active'"
-        (click)="selectActivity('very-active')"
-        class="activity-button"
+      <ion-card
+        [ngClass]="{'selected': selectedGoal === 'maintain-weight'}"
+        (click)="selectGoal('maintain-weight')"
       >
-        Very Active
-        <p>Spend a good part of the day doing heavy physical activity (e.g., bike messenger, carpenter).</p>
-      </ion-button>
+        <ion-card-content>
+          Mantener peso
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card
+        [ngClass]="{'selected': selectedGoal === 'gain-weight'}"
+        (click)="selectGoal('gain-weight')"
+      >
+        <ion-card-content>
+          Ganar peso
+        </ion-card-content>
+      </ion-card>
     </div>
+
+    <ion-button
+      expand="block"
+      [disabled]="!selectedGoal"
+      (click)="nextPage()"
+    >
+      Siguiente
+    </ion-button>
   </div>
 </ion-content>
-
-<ion-footer>
-  <ion-toolbar>
-    <ion-button expand="full" (click)="goToNextPage()">Next</ion-button>
-  </ion-toolbar>
-</ion-footer>
