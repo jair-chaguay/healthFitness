@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  edamamAppId: 'fd1c19ff', 
+  edamamApiKey: 'c5c0677324d0deadffe8f4477ec1ec36' 
 };
 
 /*
