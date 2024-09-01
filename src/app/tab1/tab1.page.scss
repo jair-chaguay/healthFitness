@@ -1,0 +1,50 @@
+/* Centra todo el contenido del ion-card-header y el ion-card-content */
+.center-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 16px; /* Espacio adicional alrededor del contenido */
+  }
+  
+  /* Centra el contenido en una fila para el ion-card-header */
+  .center-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 8px; /* Espacio entre el título y el badge */
+  }
+  
+  /* Personalización del badge */
+  .rounded-badge {
+    border-radius: 12px; /* Ajusta este valor para más o menos redondez */
+    padding: 4px 12px; /* Aumenta el padding para hacer el badge más grande */
+    font-size: 14px; /* Ajusta el tamaño de la fuente para hacerla más grande */
+    line-height: 1.5; /* Ajusta la altura de la línea para darle más espacio vertical */
+    margin-left: 8px; /* Espacio entre el título y el badge */
+  }
+  
+  /* Ajusta el padding del ion-card-header en todos los cards */
+  ion-card-header {
+    padding: 16px; /* Espacio adicional alrededor del contenido del encabezado */
+  }
+  
+  /* Centra el texto del ion-card-title y el ion-card-content */
+  ion-card-title {
+    text-align: center;
+  }
+  
+  /* Asegúrate de que el contenido en el ion-card-content esté centrado */
+  ion-card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 16px; /* Espacio adicional alrededor del contenido */
+  }
+  
+  /* Espaciado adicional entre el subtítulo y el título */
+  ion-card-subtitle {
+    margin-bottom: 12px; /* Espacio entre el subtítulo y el título */
+  }
+  

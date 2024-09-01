@@ -1,17 +1,53 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Home
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <!-- Mensaje de bienvenida -->
+  <ion-card class="welcome-card">
+    <ion-card-header>
+      <ion-card-title>Bienvenido a tu aplicación de salud</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Aquí puedes realizar un seguimiento de tus objetivos de salud y encontrar recomendaciones personalizadas para alcanzar tus metas.</p>
+    </ion-card-content>
+  </ion-card>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <!-- Información sobre el objetivo diario -->
+  <ion-card>
+    <ion-card-header class="center-content">
+      <ion-card-subtitle>Tu objetivo diario es:</ion-card-subtitle>
+      <div class="center-row">
+        <ion-card-title color="success" class="bold-text">2,000</ion-card-title>
+        <ion-badge color="light" class="rounded-badge">Calorías</ion-badge>
+      </div>
+    </ion-card-header>
+    <ion-card-content class="center-content">
+      <p>Para mantener tu peso actual, necesitas consumir 2,000 calorías diarias.</p>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Gráfico o estadísticas -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Progreso Semanal</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <!-- Aquí podrías incluir un gráfico utilizando una librería como Chart.js o similar -->
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Recordatorios -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Recordatorios</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Recuerda beber suficiente agua y hacer ejercicio diariamente.</p>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
