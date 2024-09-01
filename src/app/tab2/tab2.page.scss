@@ -1,0 +1,36 @@
+.exercise-content {
+    padding: 16px;
+  }
+  
+  .user-info-card {
+    margin-bottom: 16px;
+  }
+  
+  .exercise-card {
+    margin-bottom: 16px;
+  }
+  
+  .scroll-container {
+    display: flex;
+    overflow-x: auto;
+    padding: 10px;
+    gap: 10px;
+  }
+  
+  .day-card {
+    margin-bottom: 16px;
+  }
+  
+  .exercise-item {
+    min-width: 150px;
+    flex-shrink: 0;
+  }
+  
+  h3 {
+    margin-top: 0;
+  }
+  
+  ul {
+    padding-left: 20px;
+  }
+  
