@@ -1,17 +1,79 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
+    <ion-title>Recomendaciones de Ejercicio</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true" class="exercise-content">
+  <!-- Información del usuario -->
+  <ion-card class="user-info-card">
+    <ion-card-header>
+      <ion-card-title>Tu Nivel de Actividad</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Nivel de Actividad: {{ activityLevel }}</p>
+      <p>Calorías Necesarias: {{ caloriesNeeded }} kcal</p>
+    </ion-card-content>
+  </ion-card>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <!-- Ejercicios recomendados -->
+  <ion-card class="exercise-card">
+    <ion-card-header>
+      <ion-card-title>Ejercicios Recomendados</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div *ngIf="activityLevel === 'sedentario'">
+        <h3>Para Nivel Sedentario</h3>
+        <ul>
+          <li>Caminar 30 minutos al día</li>
+          <li>Ejercicios de estiramiento</li>
+          <li>Yoga suave</li>
+        </ul>
+      </div>
+      <div *ngIf="activityLevel === 'moderado'">
+        <h3>Para Nivel Moderado</h3>
+        <ul>
+          <li>Caminatas rápidas de 30-45 minutos</li>
+          <li>Ejercicios de fuerza moderada</li>
+          <li>Clases de aeróbicos</li>
+        </ul>
+      </div>
+      <div *ngIf="activityLevel === 'activo'">
+        <h3>Para Nivel Activo</h3>
+        <ul>
+          <li>Entrenamientos intensivos</li>
+          <li>Sesiones de gimnasio 4-5 veces a la semana</li>
+          <li>Deportes de alto impacto</li>
+        </ul>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Plan Semanal con Ejercicios -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Plan Semanal</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div *ngFor="let day of daysOfWeek">
+        <ion-card class="day-card">
+          <ion-card-header>
+            <ion-card-title>{{ day.name }}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <div class="scroll-container">
+              <ion-card *ngFor="let exercise of day.exercises" class="exercise-item">
+                <ion-card-header>
+                  <ion-card-title>{{ exercise.name }}</ion-card-title>
+                </ion-card-header>
+                <ion-card-content>
+                  <p>{{ exercise.description }}</p>
+                </ion-card-content>
+              </ion-card>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
