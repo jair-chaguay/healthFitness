@@ -1,17 +1,47 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Tab 3
-    </ion-title>
+    <ion-title>Plan de Comidas</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <ion-item>
+    <ion-label>Poner calorías objetivo: </ion-label>
+    <ion-input [(ngModel)]="targetCalories" type="number"></ion-input>
+  </ion-item>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+  <ion-item>
+    <ion-label>Calorías para Desayuno</ion-label>
+    <ion-input [(ngModel)]="selectedMeals.breakfast" type="number"></ion-input>
+    <ion-button (click)="searchBreakfast()">Buscar Desayuno</ion-button>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Calorías para Almuerzo</ion-label>
+    <ion-input [(ngModel)]="selectedMeals.lunch" type="number"></ion-input>
+    <ion-button (click)="searchLunch()">Buscar Almuerzo</ion-button>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Calorías para Merienda</ion-label>
+    <ion-input [(ngModel)]="selectedMeals.snack" type="number"></ion-input>
+    <ion-button (click)="searchSnack()">Buscar Merienda</ion-button>
+  </ion-item>
+
+  <ion-card *ngIf="currentMeal">
+    <ion-card-header>
+      <ion-card-title>{{ currentMeal.title }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <img [src]="currentMeal.image" alt="{{ currentMeal.title }}">
+      <p>Calorías: {{ currentMeal.calories }}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-item>
+    <ion-label>Total Calorías Seleccionadas: {{ totalCalories }}</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label>Calorías Restantes: {{ remainingCalories }}</ion-label>
+  </ion-item>
 </ion-content>
