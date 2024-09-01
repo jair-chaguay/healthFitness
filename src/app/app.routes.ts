@@ -29,5 +29,14 @@ export const routes: Routes = [
     path: 'old-wei-alt',
     loadComponent: () => import('./old-wei-alt/old-wei-alt.page').then( m => m.OldWeiAltPage)
   },
+  {
+    path: 'goals',
+    loadComponent: () => import('./goals/goals.page').then( m => m.GoalsPage)
+  },
+  {
+    path: 'activity',
+    loadComponent: () => import('./activity/activity.page').then( m => m.ActivityPage)
+  },
+
   
 ];

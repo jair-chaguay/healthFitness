@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Activity Level</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="activity-container">
+    <h2>What is your baseline activity level?</h2>
+    <p>Not including workouts - we count that separately.</p>
+
+    <div class="button-group">
+      <ion-button
+        expand="block"
+        fill="outline"
+        [class.selected]="selectedActivity === 'not-very-active'"
+        (click)="selectActivity('not-very-active')"
+        class="activity-button"
+      >
+        Not Very Active
+        <p>Spend most of the day sitting (e.g., bank teller, desk job).</p>
+      </ion-button>
+
+      <ion-button
+        expand="block"
+        fill="outline"
+        [class.selected]="selectedActivity === 'lightly-active'"
+        (click)="selectActivity('lightly-active')"
+        class="activity-button"
+      >
+        Lightly Active
+        <p>Spend a good part of the day on your feet (e.g., teacher, salesperson).</p>
+      </ion-button>
+
+      <ion-button
+        expand="block"
+        fill="outline"
+        [class.selected]="selectedActivity === 'active'"
+        (click)="selectActivity('active')"
+        class="activity-button"
+      >
+        Active
+        <p>Spend a good part of the day doing some physical activity (e.g., food server, postal carrier).</p>
+      </ion-button>
+
+      <ion-button
+        expand="block"
+        fill="outline"
+        [class.selected]="selectedActivity === 'very-active'"
+        (click)="selectActivity('very-active')"
+        class="activity-button"
+      >
+        Very Active
+        <p>Spend a good part of the day doing heavy physical activity (e.g., bike messenger, carpenter).</p>
+      </ion-button>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-button expand="full" (click)="goToNextPage()">Next</ion-button>
+  </ion-toolbar>
+</ion-footer>

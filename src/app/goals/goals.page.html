@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Goals</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="goals-container">
+    <h2>Let's start with goals.</h2>
+    <p>Select up to 3 that are important to you, including one weight goal.</p>
+
+    <div class="button-group">
+      <ion-button
+        expand="block"
+        fill="outline"
+        [class.selected]="selectedGoal === 'lose'"
+        (click)="selectGoal('lose')"
+      >
+        Lose weight
+      </ion-button>
+
+      <ion-button
+        expand="block"
+        fill="outline"
+        [class.selected]="selectedGoal === 'maintain'"
+        (click)="selectGoal('maintain')"
+      >
+        Maintain weight
+      </ion-button>
+
+      <ion-button
+        expand="block"
+        fill="outline"
+        [class.selected]="selectedGoal === 'gain'"
+        (click)="selectGoal('gain')"
+      >
+        Gain weight
+      </ion-button>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-button expand="full" (click)="goToNextPage()">Next</ion-button>
+  </ion-toolbar>
+</ion-footer>
