@@ -7,7 +7,7 @@ import { Recipe } from '../models/recipe.model';
   providedIn: 'root'
 })
 export class NutritionService {
-  private apiKey = '92dd735427c6494e9d21fd23db0ce16d'; // Reemplaza con tu clave API
+  private apiKey = '92dd735427c6494e9d21fd23db0ce16d'; 
 
   constructor(private http: HttpClient) {}
 

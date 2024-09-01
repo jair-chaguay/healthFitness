@@ -14,12 +14,12 @@ import { Recipe } from '../models/recipe.model';
   imports: [
     CommonModule,
     FormsModule,
-    IonicModule // Incluye IonicModule aquí para usar los componentes de Ionic
+    IonicModule 
   ]
 })
 export class Tab3Page {
   mealPlan: Recipe[] = [];
-  targetCalories: number = 2000; // Calorías objetivo
+  targetCalories: number = 2000; 
   selectedMeals: { breakfast: number; lunch: number; snack: number } = { breakfast: 0, lunch: 0, snack: 0 };
   breakfastInput: number = 0;
   lunchInput: number = 0;
@@ -33,7 +33,7 @@ export class Tab3Page {
     this.nutritionService.getRecipesByNutrients(calories - 100, calories + 100, 1).subscribe(
       data => {
         if (data && data.length > 0) {
-          const randomIndex = Math.floor(Math.random() * data.length); // Selecciona un índice aleatorio
+          const randomIndex = Math.floor(Math.random() * data.length);
           this.currentMeal = {
             title: data[randomIndex].title,
             calories: data[randomIndex].calories,
