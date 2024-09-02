@@ -3,8 +3,7 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'inicio', // Redirige a la página 'inicio' cuando la ruta está vacía
-    pathMatch: 'full' // Asegura que la redirección ocurra solo cuando toda la ruta esté vacía
+    loadChildren: () => import('./tabs/tabs.routes').then((m) => m.routes),
   },
   {
     path:'tabs',
