@@ -12,7 +12,7 @@
   <!-- Formulario de datos -->
   <form (ngSubmit)="onSubmit()">
     <!-- Grupo de Radio para seleccionar el género -->
-    <ion-radio-group [(ngModel)]="selectedGender" name="gender">
+    <ion-radio-group [(ngModel)]="selectedGender" name="selectedGender">
       <ion-card [ngClass]="{'selected': selectedGender === 'masculino'}" class="gender-card">
         <div class="card-content">
           <ion-item lines="none">
@@ -41,6 +41,7 @@
         </div>
       </ion-card>
     </ion-radio-group>
+    
 
     <!-- Campo para la edad -->
     <ion-item class="datos">

@@ -16,7 +16,7 @@ import { IonContent, IonHeader, IonTitle, IonToolbar, IonItem, IonLabel, IonInpu
 })
 export class ObjWeekendPage implements OnInit {
   pesoMeta: number = 0;
-objetivoSemanal: string = '';
+  objetivoSemanal: string = '';
   unidadPesoMeta: string = 'kg'; // Valor por defecto
   
   constructor(private navController: NavController) { }

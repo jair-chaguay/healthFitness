@@ -60,21 +60,8 @@ export class GenderPage implements OnInit {
   }
 
   onSubmit() {
-    // Convertir los datos antes de guardarlos
-    this.convertirAltura();
-    this.convertirPeso();
-    this.convertirPesoMeta();
-
-    // Guardar los datos en el servicio
     this.setUserData();
-
-    // Log para depuración
-    console.log(`Edad: ${this.edad}`);
-    console.log(`Altura: ${this.altura} m`);
-    console.log(`Peso: ${this.peso} kg`);
-    console.log(`Género: ${this.selectedGender}`);
-    console.log(`Peso Meta: ${this.pesoMeta}`);
-    console.log(`Objetivo Semanal: ${this.objetivoSemanal}`);
+    console.log(`Género seleccionado: ${this.selectedGender}`);
 
     // Navegar a la página de actividad
     this.navCtrl.navigateForward('/activity', { animated: true, animationDirection: 'forward' });
