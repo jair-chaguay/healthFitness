@@ -23,6 +23,7 @@ export class ActivityPage implements OnInit {
 
   // Método para establecer el nivel de actividad del usuario en el servicio de datos
   setUserData() {
+    console.log('Estableciendo nivel de actividad:', this.selectedActivity); // Depuración
     this.dataService.setActivityLevel(this.selectedActivity);
   }
 
