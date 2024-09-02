@@ -1,0 +1,43 @@
+.custom-confirmation {
+    display: flex; /* Habilita el uso de Flexbox */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    height: 100%; /* Asegura que el contenedor use el 100% del alto disponible */
+    margin: 200px;
+  }
+  
+  .confirmation-container {
+    text-align: center; /* Centra el texto y los elementos dentro del contenedor */
+    display: flex; /* Habilita Flexbox en el contenedor */
+    margin-top: 30px;
+    flex-direction: column; /* Organiza los elementos en una columna */
+    justify-content: center; /* Centra los elementos verticalmente */
+    align-items: center; /* Centra los elementos horizontalmente */
+    padding: 50px; /* Añade algo de espacio alrededor del contenido */
+    max-width: 100%; /* Limita el ancho máximo del contenedor */
+    width: 100%; /* Hace que el contenedor use el 90% del ancho disponible */
+  }
+  
+  .confirmation-icon {
+    font-size: 80px; /* Tamaño del ícono */
+    color: var(--ion-color-success); /* Color del ícono usando variables de Ionic */
+    margin-bottom: 20px; /* Espacio inferior */
+  }
+  
+  .confirmation-title {
+    font-size: 2rem; /* Tamaño de fuente del título */
+    margin-bottom: 10px; /* Espacio inferior */
+    color: var(--ion-color-primary); /* Color del título usando variables de Ionic */
+  }
+  
+  .confirmation-message {
+    font-size: 1.2rem; /* Tamaño de fuente del mensaje */
+    color: var(--ion-color-medium); /* Color del mensaje usando variables de Ionic */
+    margin-bottom: 20px; /* Espacio inferior */
+  }
+  
+  ion-button {
+    width: 100%; /* Botón expandido al ancho del contenedor */
+    font-size: 1rem; /* Tamaño de fuente del botón */
+  }
+  
