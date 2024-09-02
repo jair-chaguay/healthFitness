@@ -17,20 +17,25 @@
     gap: 10px;
   }
   
-  .day-card {
-    margin-bottom: 16px;
-  }
-  
   .exercise-item {
     min-width: 150px;
     flex-shrink: 0;
+    max-width: 50%; /* Asegura que el card no exceda el ancho del contenedor */
+    
   }
   
-  h3 {
-    margin-top: 0;
+  .limited-content {
+    display: -webkit-box;
+    
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    max-height: 100%; /* Ajusta para que coincida con el número de líneas */
+    
   }
   
-  ul {
-    padding-left: 20px;
+  .day-card {
+    margin-bottom: 10px;
   }
   
