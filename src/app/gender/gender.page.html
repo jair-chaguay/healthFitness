@@ -1,9 +1,6 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>Datos Necesarios</ion-title>
-    <ion-buttons slot="end">
-   
-    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -12,10 +9,10 @@
     <ion-progress-bar value="0.65"></ion-progress-bar>
   </div>
 
-  
-
+  <!-- Formulario de datos -->
   <form (ngSubmit)="onSubmit()">
-    <ion-radio-group [(ngModel)]="selectedGender">
+    <!-- Grupo de Radio para seleccionar el género -->
+    <ion-radio-group [(ngModel)]="selectedGender" name="gender">
       <ion-card [ngClass]="{'selected': selectedGender === 'masculino'}" class="gender-card">
         <div class="card-content">
           <ion-item lines="none">
@@ -44,56 +41,55 @@
         </div>
       </ion-card>
     </ion-radio-group>
+
+    <!-- Campo para la edad -->
     <ion-item class="datos">
       <ion-label>Edad</ion-label>
       <ion-input [(ngModel)]="edad" name="edad" type="number"></ion-input>
     </ion-item>
 
+    <!-- Campos para altura con opciones de unidad -->
     <ion-item class="datos">
       <ion-label>Altura (m o cm)</ion-label>
-      <ion-input [(ngModel)]="altura" name="altura" type="number" (ionChange)="convertirAltura()"></ion-input>
-      <ion-select [(ngModel)]="unidadAltura" name="unidadAltura" (ionChange)="convertirAltura()">
+      <ion-input [(ngModel)]="altura" name="altura" type="number"></ion-input>
+      <ion-select [(ngModel)]="unidadAltura" name="unidadAltura">
         <ion-select-option value="m">Metros (m)</ion-select-option>
         <ion-select-option value="cm">Centímetros (cm)</ion-select-option>
       </ion-select>
     </ion-item>
 
+    <!-- Campos para peso con opciones de unidad -->
     <ion-item class="datos">
       <ion-label>Peso (kg o lbs)</ion-label>
-      <ion-input [(ngModel)]="peso" name="peso" type="number" (ionChange)="convertirPeso()"></ion-input>
-      <ion-select [(ngModel)]="unidadPeso" name="unidadPeso" (ionChange)="convertirPeso()">
+      <ion-input [(ngModel)]="peso" name="peso" type="number"></ion-input>
+      <ion-select [(ngModel)]="unidadPeso" name="unidadPeso">
         <ion-select-option value="kg">Kilogramos (kg)</ion-select-option>
         <ion-select-option value="lbs">Libras (lbs)</ion-select-option>
       </ion-select>
     </ion-item>
 
-    <ion-item class="datos">
+    <!-- Campo para peso meta con opciones de unidad -->
+    <ion-item class="peso-meta">
+      <ion-label>Peso al que quieres llegar</ion-label>
+      <ion-input [(ngModel)]="pesoMeta" name="pesoMeta" type="number" placeholder="Ingresa tu peso meta"></ion-input>
+      <ion-select [(ngModel)]="unidadPesoMeta" name="unidadPesoMeta">
+        <ion-select-option value="kg">(kg)</ion-select-option>
+        <ion-select-option value="lbs">(lbs)</ion-select-option>
+      </ion-select>
+    </ion-item>
 
-    
-  </ion-item>
+    <!-- Selección del objetivo semanal -->
+    <ion-item class="objetivo-semanal">
+      <ion-label>Objetivo Semanal</ion-label>
+      <ion-select [(ngModel)]="objetivoSemanal" name="objetivoSemanal">
+        <ion-select-option value="0.25">Perder 0.25 kg por semana</ion-select-option>
+        <ion-select-option value="0.5">Perder 0.5 kg por semana</ion-select-option>
+        <ion-select-option value="0.75">Perder 0.75 kg por semana</ion-select-option>
+        <ion-select-option value="1">Perder 1 kg por semana</ion-select-option>
+      </ion-select>
+    </ion-item>
 
-  <ion-item class="peso-meta">
-    <ion-label>Peso al que quieres llegar</ion-label>
-    <ion-input [(ngModel)]="pesoMeta" name="pesoMeta" type="number" placeholder="Ingresa tu peso meta" (ionChange)="convertirPesoMeta()"></ion-input>
-    <ion-select [(ngModel)]="unidadPesoMeta" name="unidadPesoMeta" (ionChange)="convertirPesoMeta()">
-      <ion-select-option value="kg"> (kg)</ion-select-option>
-      <ion-select-option value="lbs"> (lbs)</ion-select-option>
-    </ion-select>
-  </ion-item>
-
-  <!-- Objetivo Semanal -->
-  <ion-item class="objetivo-semanal">
-    <ion-label>Objetivo Semanal</ion-label>
-    <ion-select [(ngModel)]="objetivoSemanal" name="objetivoSemanal">
-      <ion-select-option value="0.25">Perder 0.25 kg por semana</ion-select-option>
-      <ion-select-option value="0.5">Perder 0.5 kg por semana</ion-select-option>
-      <ion-select-option value="0.75">Perder 0.75 kg por semana</ion-select-option>
-      <ion-select-option value="1">Perder 1 kg por semana</ion-select-option>
-    </ion-select>
-  </ion-item>
-
-
-    <ion-button expand="full" type="submit">Continue</ion-button>
+    <!-- Botón para enviar el formulario -->
+    <ion-button expand="full" type="submit">Continuar</ion-button>
   </form>
-
 </ion-content>

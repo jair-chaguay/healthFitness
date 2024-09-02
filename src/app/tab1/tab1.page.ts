@@ -1,17 +1,16 @@
-import { Component,OnInit } from '@angular/core';
-import { IonHeader, IonToolbar, IonTitle, IonContent,IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCardContent,
-  IonInput, IonButton,
-  IonLabel, IonList, IonItem, IonBadge,IonCol,IonRow,IonGrid} from '@ionic/angular/standalone';
+import { Component, OnInit } from '@angular/core';
+import { IonHeader, IonToolbar, IonTitle, IonContent, IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCardContent,
+  IonInput, IonButton, IonLabel, IonList, IonItem, IonBadge, IonCol, IonRow, IonGrid } from '@ionic/angular/standalone';
 import { ExploreContainerComponent } from '../explore-container/explore-container.component';
 import { DataService } from '../services/data.service';
+
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss'],
   standalone: true,
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent, ExploreContainerComponent,IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCardContent,
-    IonInput, IonButton,
-    IonLabel, IonList, IonItem,IonBadge,IonCol,IonRow,IonGrid],
+  imports: [IonHeader, IonToolbar, IonTitle, IonContent, ExploreContainerComponent, IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCardContent,
+    IonInput, IonButton, IonLabel, IonList, IonItem, IonBadge, IonCol, IonRow, IonGrid],
 })
 export class Tab1Page implements OnInit {
   gender: string;
@@ -20,8 +19,11 @@ export class Tab1Page implements OnInit {
   height: number;
   activityLevel: string;
   dailyCalories: number;
+
   constructor(private dataService: DataService) {}
+
   ngOnInit() {
+    console.log('Tab1Page inicializado'); 
     // Obtener datos del servicio
     this.gender = this.dataService.getGender();
     this.age = this.dataService.getAge();
@@ -29,10 +31,17 @@ export class Tab1Page implements OnInit {
     this.height = this.dataService.getHeight();
     this.activityLevel = this.dataService.getActivityLevel();
 
+    // Imprimir en consola los valores obtenidos
+    console.log('Género:', this.gender);
+    console.log('Edad:', this.age);
+    console.log('Peso:', this.weight);
+    console.log('Altura:', this.height);
+    console.log('Nivel de actividad:', this.activityLevel);
+
     // Realizar el cálculo de calorías
     this.calculateCalories();
-    
   }
+
   calculateCalories() {
     let tmb: number;
 
@@ -61,5 +70,8 @@ export class Tab1Page implements OnInit {
         this.dailyCalories = tmb * 1.2; // Asumiendo 'No muy activo' como predeterminado
         break;
     }
+
+    // Imprimir en consola el resultado del cálculo de calorías
+    console.log('Calorías diarias recomendadas:', this.dailyCalories);
   }
 }
