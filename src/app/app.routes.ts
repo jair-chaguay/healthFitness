@@ -3,7 +3,8 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./tabs/tabs.routes').then((m) => m.routes),
+    redirectTo: 'inicio', // Redirige a la página 'inicio' cuando la ruta está vacía
+    pathMatch: 'full' // Asegura que la redirección ocurra solo cuando toda la ruta esté vacía
   },
   {
     path:'tabs',
@@ -36,7 +37,8 @@ export const routes: Routes = [
   {
     path: 'obj-weekend',
     loadComponent: () => import('./obj-weekend/obj-weekend.page').then( m => m.ObjWeekendPage)
-  },  {
+  },
+  {
     path: 'finish-sign',
     loadComponent: () => import('./finish-sign/finish-sign.page').then( m => m.FinishSignPage)
   },
