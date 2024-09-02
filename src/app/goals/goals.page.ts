@@ -18,7 +18,9 @@ import { NavController } from '@ionic/angular';
 export class GoalsPage implements OnInit {
   selectedGoal: string | null = null;
 
-  constructor(private navCtrl: NavController) {}
+  constructor(private navCtrl: NavController,
+    private router: Router
+  ) {}
 
   selectGoal(goal: string) {
     this.selectedGoal = goal;
@@ -27,7 +29,11 @@ export class GoalsPage implements OnInit {
   nextPage() {
     if (this.selectedGoal) {
       console.log('Objetivo seleccionado:', this.selectedGoal);
-      this.navCtrl.navigateForward('/gender', { animated: true, animationDirection: 'forward' }); // Cambia '/goals' por la ruta correcta de tu página Goals
+
+      // Navegar a la siguiente página y pasar el objetivo seleccionado
+      this.router.navigate(['/gender'], { 
+        state: { selectedGoal: this.selectedGoal }
+      });
     }
   }
 

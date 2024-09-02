@@ -1,3 +1,4 @@
+// src/app/gender/gender.page.ts
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -38,7 +39,11 @@ export class GenderPage implements OnInit {
     this.dataService.setAge(this.edad);
     this.dataService.setHeight(this.altura);
     this.dataService.setWeight(this.peso);
-    
+    this.dataService.setHeightUnit(this.unidadAltura);
+    this.dataService.setWeightUnit(this.unidadPeso);
+    this.dataService.setTargetWeight(this.pesoMeta);
+    this.dataService.setTargetWeightUnit(this.unidadPesoMeta);
+    this.dataService.setWeeklyGoal(this.objetivoSemanal);
   }
 
   convertirAltura() {
@@ -60,10 +65,21 @@ export class GenderPage implements OnInit {
   }
 
   onSubmit() {
+    this.convertirAltura();
+    this.convertirPeso();
+    this.convertirPesoMeta();
     this.setUserData();
+  
+    // Mostrar los datos en la consola
     console.log(`Género seleccionado: ${this.selectedGender}`);
-
+    console.log(`Edad: ${this.edad}`);
+    console.log(`Altura: ${this.altura} ${this.unidadAltura}`);
+    console.log(`Peso: ${this.peso} ${this.unidadPeso}`);
+    console.log(`Peso Meta: ${this.pesoMeta} ${this.unidadPesoMeta}`);
+    console.log(`Objetivo Semanal: ${this.objetivoSemanal}`);
+  
     // Navegar a la página de actividad
     this.navCtrl.navigateForward('/activity', { animated: true, animationDirection: 'forward' });
   }
+
 }
