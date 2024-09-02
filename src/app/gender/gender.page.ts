@@ -8,13 +8,13 @@ import {
 import { NavController } from '@ionic/angular';
 import { DataService } from '../services/data.service';
 
-
 @Component({
   selector: 'app-gender',
   templateUrl: './gender.page.html',
   styleUrls: ['./gender.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonButtons, IonBackButton, IonLabel, IonButton,
+  imports: [
+    IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonButtons, IonBackButton, IonLabel, IonButton,
     IonItem, IonIcon, IonRadio, IonProgressBar, IonSelectOption
   ]
 })
@@ -29,24 +29,24 @@ export class GenderPage implements OnInit {
   objetivoSemanal: string = '';
   unidadPesoMeta: string = 'kg'; // Valor por defecto
 
-  constructor(private navCtrl: NavController
-  ,private dataService: DataService) { }
+  constructor(private navCtrl: NavController, private dataService: DataService) { }
 
+  ngOnInit() { }
 
-  setUserData(){
+  setUserData() {
     this.dataService.setGender(this.selectedGender);
     this.dataService.setAge(this.edad);
     this.dataService.setHeight(this.altura);
     this.dataService.setWeight(this.peso);
     
   }
+
   convertirAltura() {
     if (this.unidadAltura === 'cm') {
       this.altura = this.altura / 100; // Convertir cm a metros
     }
   }
 
-  
   convertirPesoMeta() {
     if (this.unidadPesoMeta === 'lbs') {
       this.pesoMeta = this.pesoMeta * 0.453592; // Convertir libras a kilogramos
@@ -59,15 +59,24 @@ export class GenderPage implements OnInit {
     }
   }
 
-  ngOnInit() { }
-
   onSubmit() {
-    // Procesar los datos aquí
+    // Convertir los datos antes de guardarlos
+    this.convertirAltura();
+    this.convertirPeso();
+    this.convertirPesoMeta();
+
+    // Guardar los datos en el servicio
+    this.setUserData();
+
+    // Log para depuración
     console.log(`Edad: ${this.edad}`);
     console.log(`Altura: ${this.altura} m`);
     console.log(`Peso: ${this.peso} kg`);
-    this.navCtrl.navigateForward('/activity', { animated: true, animationDirection: 'forward' }); // Cambia '/goals' por la ruta correcta de tu página Goals
+    console.log(`Género: ${this.selectedGender}`);
+    console.log(`Peso Meta: ${this.pesoMeta}`);
+    console.log(`Objetivo Semanal: ${this.objetivoSemanal}`);
 
+    // Navegar a la página de actividad
+    this.navCtrl.navigateForward('/activity', { animated: true, animationDirection: 'forward' });
   }
-
 }
