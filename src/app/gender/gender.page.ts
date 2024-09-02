@@ -5,7 +5,8 @@ import {
   IonContent, IonHeader, IonTitle, IonToolbar, IonButtons, IonBackButton, IonLabel, IonButton, IonItem, IonIcon, IonRadio,
   IonProgressBar, IonSelectOption
 } from '@ionic/angular/standalone';
-import { NavController } from '@ionic/angular'
+import { NavController } from '@ionic/angular';
+import { DataService } from '../services/data.service';
 
 
 @Component({
@@ -29,10 +30,16 @@ export class GenderPage implements OnInit {
   unidadPesoMeta: string = 'kg'; // Valor por defecto
 
   constructor(private navCtrl: NavController
-  ) { }
+  ,private dataService: DataService) { }
 
 
-
+  setUserData(){
+    this.dataService.setGender(this.selectedGender);
+    this.dataService.setAge(this.edad);
+    this.dataService.setHeight(this.altura);
+    this.dataService.setWeight(this.peso);
+    
+  }
   convertirAltura() {
     if (this.unidadAltura === 'cm') {
       this.altura = this.altura / 100; // Convertir cm a metros
